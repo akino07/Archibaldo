@@ -12,14 +12,12 @@ public class InicioControlador {
 
     @RequestMapping(value = "/")
     public String index(){
-        return "index";
+        return "inicio";
     }
 
     @RequestMapping(value = "/acerca")
     public String acerca(){
         return "acerca";
     }
-
-
 
 }
