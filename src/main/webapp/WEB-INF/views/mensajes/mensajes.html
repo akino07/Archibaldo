@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorator="templates/layout">
+<body>
+
+<div layout:fragment="content">
+
+    <div th:include="mensajes_sidebar :: sidebar"></div>
+
+    <div class="containter">
+
+        <h2 class="thin indigo-text">Nuevo mensaje</h2>
+
+        <div class="row">
+            <div class="col s9">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input  id="Titulo" type="text" class="validate">
+                            <label for="Titulo">Título</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <select>
+                                <option value="disabled selected">Seleccione el tipo de mensaje</option>
+                                <option value="1">Mensaje Directo</option>
+                                <option value="2">Recordatorio</option>
+                                <option value="3">Calendarizar</option>
+                            </select>
+                            <label>Tipo de Mensaje</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input  id="destinatarios" type="text" class="validate">
+                            <label for="destinatarios">Destinatarios</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="contenido" class="materialize-textarea"></textarea>
+                            <label for="contenido">Contenido</label>
+                        </div>
+                    </div>
+                    <input type="submit" value="Guardar" class="waves-effect waves-light btn">
+                    <a class="waves-effect waves-light btn">Enviar ahora</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script layout:fragment="scripts">
+    $(function() {
+        $(".button-collapse").sideNav();
+        $('select').material_select();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorator="templates/layout">
+<body>
+<div layout:fragment="content">
+
+    <div th:include="mensajes_sidebar :: sidebar"></div>
+
+    <div class="container col s9 ">
+
+        <h2 class="thin indigo-text">Recordatorios programados</h2>
+
+        <div class="valign-wrapper">
+
+            <table class="highlight valign">
+                <thead>
+                <tr>
+                    <th data-field="titulo">Título</th>
+                    <th data-field="remitente">Remiente</th>
+                    <th data-field="programada">Fecha programada</th>
+                    <th data-field="enviada">Acciones</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>Entrega de notas</td>
+                    <td>Manuel Farfán Castro</td>
+                    <td>25/07/2016</td>
+                    <td>
+                        <a class="waves-effect waves-light btn">Enviar Ahora</a>
+                        <a class="waves-effect waves-light btn">Detalles</a>
+                    <td>
+                </tr>
+                <tr>
+                    <td>Entrega de notas</td>
+                    <td>Manuel Farfán Castro</td>
+                    <td>25/07/2016</td>
+                    <td>
+                        <a class="waves-effect waves-light btn">Enviar Ahora</a>
+                        <a class="waves-effect waves-light btn">Detalles</a>
+                    <td>
+                </tr>
+                <tr>
+                    <td>Entrega de notas</td>
+                    <td>Manuel Farfán Castro</td>
+                    <td>25/07/2016</td>
+                    <td>
+                        <a class="waves-effect waves-light btn">Enviar Ahora</a>
+                        <a class="waves-effect waves-light btn">Detalles</a>
+                    <td>
+                </tr>
+                <tr>
+                    <td>Entrega de notas</td>
+                    <td>Manuel Farfán Castro</td>
+                    <td>25/07/2016</td>
+                    <td>
+                        <a class="waves-effect waves-light btn">Enviar Ahora</a>
+                        <a class="waves-effect waves-light btn">Detalles</a>
+                    <td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+        <ul class="pagination">
+            <!--<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>-->
+            <li class="disabled"><a href="#!"><i class="material-icons"><</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <!--<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>-->
+            <li class="waves-effect"><a href="#!"><i class="material-icons"> > </i></a></li>
+        </ul>
+
+        <div class="fixed-action-btn" style="bottom: 35%; right: 24px;">
+            <a class="btn-floating btn-large red" href="mensajes">
+                <i class="large material-icons">add</i>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+<script layout:fragment="scripts">
+</script>
+</body>
+</html>

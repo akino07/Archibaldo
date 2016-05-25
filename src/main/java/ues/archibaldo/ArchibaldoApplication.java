@@ -8,12 +8,18 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
+import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @EnableWebMvc
 @SpringBootApplication
 public class ArchibaldoApplication extends WebMvcAutoConfiguration{
 
+
+	//TODO MOVER CONFIGURACION DE THYMELEAF A UNA CLASE APARTE
 	//Thymeleaf configuarción
 	@Bean(name ="templateResolver")
 	public ServletContextTemplateResolver getTemplateResolver() {
@@ -25,10 +31,39 @@ public class ArchibaldoApplication extends WebMvcAutoConfiguration{
 		return templateResolver;
 	}
 
+	@Bean(name ="templateResolverMensajes")
+	public ServletContextTemplateResolver getTemplateResolverMensajes() {
+		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
+		templateResolver.setPrefix("/WEB-INF/views/mensajes/");
+		templateResolver.setSuffix(".html");
+		templateResolver.setTemplateMode("LEGACYHTML5");
+		templateResolver.setCacheable(false);
+		return templateResolver;
+	}
+
+	@Bean(name ="templateResolverPermisos")
+	public ServletContextTemplateResolver getTemplateResolverPermisos() {
+		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
+		templateResolver.setPrefix("/WEB-INF/views/permisos/");
+		templateResolver.setSuffix(".html");
+		templateResolver.setTemplateMode("LEGACYHTML5");
+		templateResolver.setCacheable(false);
+		return templateResolver;
+	}
+
 	@Bean(name ="templateEngine")
 	public SpringTemplateEngine getTemplateEngine() {
 		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-		templateEngine.setTemplateResolver(getTemplateResolver());
+		Set<ServletContextTemplateResolver> servletContextTemplateResolvers = new HashSet<>();
+
+
+		//IR AÑADIENDO CADA  templateResolver
+		servletContextTemplateResolvers.add(getTemplateResolver());
+		servletContextTemplateResolvers.add(getTemplateResolverMensajes());
+		servletContextTemplateResolvers.add(getTemplateResolverPermisos());
+
+		templateEngine.setTemplateResolvers(servletContextTemplateResolvers);
+//		templateEngine.setTemplateResolver(getTemplateResolver());
 		templateEngine.addDialect(new LayoutDialect());
 		return templateEngine;
 	}
@@ -39,7 +74,6 @@ public class ArchibaldoApplication extends WebMvcAutoConfiguration{
 		viewResolver.setViewNames(new String[]{"*.html"});
 		return viewResolver;
 	}
-
 
 	public static void main(String[] args) {
 		SpringApplication.run(ArchibaldoApplication.class, args);

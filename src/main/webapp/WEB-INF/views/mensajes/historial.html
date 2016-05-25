@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorator="templates/layout">
+<body>
+<div layout:fragment="content">
+
+    <div th:include="mensajes_sidebar :: sidebar"></div>
+
+    <div class="container col s9">
+
+        <h2 class="thin indigo-text">Historial de mensajes enviados</h2>
+
+        <table class="highlight">
+            <thead>
+            <tr>
+                <th data-field="titulo">Título</th>
+                <th data-field="remitente">Remiente</th>
+                <th data-field="programada">Fecha programada</th>
+                <th data-field="enviada">Fecha enviada</th>
+                <th data-field="enviada">Tipo</th>
+                <th data-field="enviada">Acciones</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Entrega de notas</td>
+                <td>Manuel Farfán Castro</td>
+                <td>25/07/2016</td>
+                <td>23/07/2016</td>
+                <td>Recordatorio</td>
+            </tr>
+            <tr>
+                <td>Entrega de notas</td>
+                <td>Manuel Farfán Castro</td>
+                <td>25/07/2016</td>
+                <td>23/07/2016</td>
+                <td>Recordatorio</td>
+            </tr>
+            <tr>
+                <td>Entrega de notas</td>
+                <td>Manuel Farfán Castro</td>
+                <td>25/07/2016</td>
+                <td>23/07/2016</td>
+                <td>Recordatorio</td>
+            </tr>
+            <tr>
+                <td>Entrega de notas</td>
+                <td>Manuel Farfán Castro</td>
+                <td>25/07/2016</td>
+                <td>23/07/2016</td>
+                <td>Recordatorio</td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <ul class="pagination">
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+
+    </div>
+
+</div>
+<script layout:fragment="scripts">
+</script>
+</body>
+</html>

@@ -12,7 +12,7 @@ public class InicioControlador {
 
     @RequestMapping(value = "/")
     public String index(){
-        return "inicio";
+        return "index";
     }
 
     @RequestMapping(value = "/acerca")
