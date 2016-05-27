@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorator="templates/layout">
+<body>
+
+
+
+<div layout:fragment="content">
+
+    <div style="float: left; margin-left: 0%; margin-right: 1%">
+        <a href="#" class="waves-effect waves-teal btn-flat">Grados</a><br><br>
+        <a href="#" class="waves-effect waves-teal btn-flat">Profesores</a><br><br>
+    </div>
+
+    <div class="container col s12 ">
+
+        <h3 class="thin indigo-text">Configuración del Sistema</h3>
+        <div class="row">
+            <div class="col s9">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="col s6">
+                            <input  id="horaEntrada" type="time" class="datepicker">
+                            <label for="horaEntrada">Hora Entrada</label>
+                        </div>
+                        <div class="col s6">
+                            <input  id="horaSalida" type="time" class="datepicker">
+                            <label for="horaSalida">Hora Salida</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input  id="tardia" type="number" min="0" max="60" class="validate">
+                            <label for="tardia">Tardía</label>
+                        </div>
+                    </div>
+
+                    <div class="col s12">
+                        <input  id="primeraSemana" type="date" class="datepicker">
+                        <label for="primeraSemana">Primera Semana Lectiva</label>
+                    </div>
+
+                    <br>
+
+                    <input type="submit" value="Guardar" class="waves-effect waves-light btn">
+                </form>
+            </div>
+        </div>
+
+        <br>
+
+        <hr>
+
+        <h3 class="thin indigo-text">Lista Usuarios</h3>
+
+        <div class="col s12">
+
+            <table class="highlight">
+                <thead>
+                <tr>
+                    <th class="col s8" data-field="Nombre">Nombre</th>
+                    <th class="col s2" data-field="rol">Rol</th>
+                    <th class="col s2" data-field="accciones">Acciones</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>
+                        Omar Aquino
+                    </td>
+                    <td>
+                        ROL 1
+                    </td>
+                    <td>
+                        <a class="btn waves-effect waves-light">Editar</a>
+                        <a class="btn waves-effect waves-light">Eliminar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Omar Aquino
+                    </td>
+                    <td>
+                        ROL 1
+                    </td>
+                    <td>
+                        <a class="btn waves-effect waves-light">Editar</a>
+                        <a class="btn waves-effect waves-light">Eliminar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Omar Aquino
+                    </td>
+                    <td>
+                        ROL 1
+                    </td>
+                    <td>
+                        <a class="btn waves-effect waves-light">Editar</a>
+                        <a class="btn waves-effect waves-light">Eliminar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+        <ul class="pagination">
+            <!--<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>-->
+            <li class="disabled"><a href="#!"><i class="material-icons"><</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <!--<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>-->
+            <li class="waves-effect"><a href="#!"><i class="material-icons"> > </i></a></li>
+        </ul>
+
+        <div class="fixed-action-btn" style="bottom: 35%; right: 24px;">
+            <a class="btn-floating btn-large red modal-trigger" href="#usuarioModal">
+                <i class="large material-icons">add</i>
+            </a>
+        </div>
+
+        <div th:include="usuario_modal :: modal"></div>
+
+    </div>
+</div>
+<script layout:fragment="scripts">
+    $(function(){
+        $('.modal-trigger').leanModal();
+        $('select').material_select();
+    });
+</script>
+</body>
+</html>

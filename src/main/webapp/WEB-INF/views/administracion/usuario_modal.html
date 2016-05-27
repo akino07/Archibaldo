@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorator="templates/layout">
+<body>
+<div th:fragment="modal">
+    <div id="usuarioModal" class="modal">
+        <div class="modal-content">
+            <h4 class="thin">Solicitud de Permiso</h4>
+            <div class="containter">
+                <div class="row">
+                    <div class="col s12">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input  id="nombres" type="text" class="validate">
+                                    <label for="nombres">Nombres</label>
+                                </div>
+
+                                <div class="input-field col s6">
+                                    <input  id="apellidos" type="text" class="validate">
+                                    <label for="apellidos">Apellidos</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <select>
+                                        <option value="disabled selected">Rol del usuario</option>
+                                        <option value="1">Roll on</option>
+                                        <option value="2">Roll on</option>
+                                        <option value="3">Roll on</option>
+                                    </select>
+                                    <label>Tipo de Rol</label>
+                                </div>
+
+                                <div class="input-field col s4">
+                                    <input id="codigo" type="text">
+                                    <label for="codigo">Código</label>
+                                </div>
+
+                                <div class="input-field col s4">
+                                    <input id="pass" type="password">
+                                    <label for="pass">Contraseña</label>
+                                </div>
+
+                            </div>
+                            <input type="submit" value="Guardar" class="btn waves-effect waves-light">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+</div>
+</body>
+</html>
