@@ -61,6 +61,16 @@ public class ArchibaldoApplication extends WebMvcAutoConfiguration{
 		return templateResolver;
 	}
 
+	@Bean(name ="templateResolverMaestros")
+	public ServletContextTemplateResolver getTemplateResolverMaestros() {
+		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
+		templateResolver.setPrefix("/WEB-INF/views/maestros/");
+		templateResolver.setSuffix(".html");
+		templateResolver.setTemplateMode("LEGACYHTML5");
+		templateResolver.setCacheable(false);
+		return templateResolver;
+	}
+
 	@Bean(name ="templateEngine")
 	public SpringTemplateEngine getTemplateEngine() {
 		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -71,6 +81,7 @@ public class ArchibaldoApplication extends WebMvcAutoConfiguration{
 		servletContextTemplateResolvers.add(getTemplateResolverMensajes());
 		servletContextTemplateResolvers.add(getTemplateResolverPermisos());
 		servletContextTemplateResolvers.add(getTemplateResolverAdministracion());
+		servletContextTemplateResolvers.add(getTemplateResolverMaestros());
 
 		templateEngine.setTemplateResolvers(servletContextTemplateResolvers);
 //		templateEngine.setTemplateResolver(getTemplateResolver());
