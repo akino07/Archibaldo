@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorator="templates/layout">
+<body>
+<div layout:fragment="content">
+    <div class="container">
+        <div class="row">
+            <form class="col s12">
+
+                <h5 class="thin indigo-text">Alumno</h5>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="" id="nombre" type="text" class="validate">
+                        <label for="nombre">Nombre</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <p>
+                            <input type="checkbox" id="huella1" />
+                            <label for="huella1">Huella 1</label>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="" id="apellido" type="text" class="validate">
+                        <label for="apellido">Apellido</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <p>
+                            <input type="checkbox" id="huella2" />
+                            <label for="huella2">Huella 2</label>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="" id="grado" type="text" class="validate">
+                        <label for="grado">Grado</label>
+                    </div>
+                </div>
+            </form>
+
+                <form class="col s12">
+
+                    <div class="row">
+                        <h5 class="thin indigo-text col s6">Encargado 1</h5>
+                        <h5 class="thin indigo-text col s6">Encargado 2</h5>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="input-field col s6">
+
+                            <input placeholder="" id="nombreencargado1" type="text" class="validate">
+                            <label for="nombreencargado1">Nombre</label>
+                        </div>
+
+                        <div class="input-field col s6">
+
+                            <input placeholder="" id="nombreencargado2" type="text" class="validate">
+                            <label for="nombreencargado2">Nombre</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="" id="apellidoencargado1" type="text" class="validate">
+                            <label for="apellidoencargado1">Apellido</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <input placeholder="" id="apellidoencargado2" type="text" class="validate">
+                            <label for="apellidoencargado2">Apellido</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="" id="codigo1" type="text" class="validate">
+                            <label for="codigo1">Codigo</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input placeholder="" id="codigo2" type="text" class="validate">
+                            <label for="codigo2">Codigo</label>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="" id="password1" type="password" class="validate">
+                            <label for="password1">Password</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <input placeholder="" id="password2" type="password" class="validate">
+                            <label for="password2">Password</label>
+                        </div>
+
+                    </div>
+                </form>
+
+        </div>
+
+    </div>
+</div>
+<script layout:fragment="scripts">
+</script>
+</body>
+</html>

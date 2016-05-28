@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorator="templates/layout">
+<body>
+<div layout:fragment="content">
+    <div class="container">
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Buscar por Nombre o Apellido" id="buscar" type="search" class="validate">
+            </div>
+
+            <div class="input-field col s3">
+
+                <select class="browser-default">
+                    <option value="" disabled selected>Elegir Grado</option>
+                    <option value="1">Primer Grado</option>
+                    <option value="2">Segundo Grado</option>
+                    <option value="3">Tercer Grado</option>
+                    <option value="4">Cuarto Grado</option>
+                    <option value="5">Quinto Grado</option>
+                    <option value="6">Sexto Grado</option>
+                    <option value="7">Septimo Grado</option>
+                    <option value="8">Octavo Grado</option>
+                    <option value="9">Noveno Grado</option>
+                </select>
+            </div>
+
+            <div class="input-field col s3">
+                <a class="waves-effect waves-light btn">Buscar</a>
+            </div>
+        </div>
+
+        <table class="striped">
+            <thead>
+            <tr>
+                <th data-field="nombre">Nombre</th>
+                <th data-field="apellido">Apellido</th>
+                <th data-field="grado">Grado</th>
+                <th data-field="huella">Huella</th>
+                <th data-field="acciones">Acciones</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Jose</td>
+                <td>Martinez</td>
+                <td>Tercer Grado</td>
+                <td><a href="#gradosModal">Ver Huella</a></td>
+                <td><a class="btn-floating blue" href="actualizarAlumno"><i class="material-icons">loop</i></a>
+                    <a class="btn-floating red red modal-trigger" href="#detalleAlumnoModal"><i class="material-icons">info</i></a>
+                    <a class="btn-floating green" href="mensajes"><i class="material-icons">message</i></a></td>
+            </tr>
+
+            <tr>
+                <td>Jose</td>
+                <td>Martinez</td>
+                <td>Tercer Grado</td>
+                <td><a href="">Ver Huella</a></td>
+                <td><a class="btn-floating blue" href="actualizarAlumno"><i class="material-icons">loop</i></a>
+                    <a class="btn-floating red modal-trigger" href="#detalleAlumnoModal"><i class="material-icons">info</i></a>
+                    <a class="btn-floating green" href="mensajes"><i class="material-icons">message</i></a></td>
+            </tr>
+
+            <tr>
+                <td>Jose</td>
+                <td>Martinez</td>
+                <td>Tercer Grado</td>
+                <td><a href="">Ver Huella</a></td>
+                <td><a class="btn-floating blue" href="actualizarAlumno"><i class="material-icons">loop</i></a>
+                    <a class="btn-floating red modal-trigger" href="#detalleAlumnoModal" ><i class="material-icons">info</i></a>
+                    <a class="btn-floating green" href="mensajes" ><i class="material-icons">message</i></a></td>
+            </tr>
+
+            <tr>
+                <td>Jose</td>
+                <td>Martinez</td>
+                <td>Tercer Grado</td>
+                <td><a href="">Ver Huella</a></td>
+                <td><a class="btn-floating blue" href="actualizarAlumno"><i class="material-icons">loop</i></a>
+                    <a class="btn-floating red modal-trigger" href="#detalleAlumnoModal" ><i class="material-icons">info</i></a>
+                    <a class="btn-floating green" href="mensajes" ><i class="material-icons">message</i></a></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <a class="waves-effect waves-light btn" href="actualizarAlumno"><i class="material-icons left">perm_identity</i>Agregar Alumno</a>
+
+
+
+        <div th:include="detalleAlumno :: modal"></div>
+
+    </div>
+</div>
+<script layout:fragment="scripts">
+    $(function(){
+        $('.modal-trigger').leanModal();
+        $('select').material_select();
+    });
+</script>
+</body>
+</html>

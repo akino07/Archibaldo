@@ -71,10 +71,31 @@ public class ArchibaldoApplication extends WebMvcAutoConfiguration{
 		return templateResolver;
 	}
 
+	@Bean(name ="templateResolverAlumnos")
+	public ServletContextTemplateResolver getTemplateResolverAlumnos() {
+		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
+		templateResolver.setPrefix("/WEB-INF/views/alumnos/");
+		templateResolver.setSuffix(".html");
+		templateResolver.setTemplateMode("LEGACYHTML5");
+		templateResolver.setCacheable(false);
+		return templateResolver;
+	}
+
+	@Bean(name ="templateResolverGrados")
+	public ServletContextTemplateResolver getTemplateResolverGrados() {
+		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
+		templateResolver.setPrefix("/WEB-INF/views/grados/");
+		templateResolver.setSuffix(".html");
+		templateResolver.setTemplateMode("LEGACYHTML5");
+		templateResolver.setCacheable(false);
+		return templateResolver;
+	}
+
 	@Bean(name ="templateEngine")
 	public SpringTemplateEngine getTemplateEngine() {
 		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
 		Set<ServletContextTemplateResolver> servletContextTemplateResolvers = new HashSet<>();
+
 
 		//IR AÑADIENDO CADA  templateResolver
 		servletContextTemplateResolvers.add(getTemplateResolver());
@@ -82,6 +103,8 @@ public class ArchibaldoApplication extends WebMvcAutoConfiguration{
 		servletContextTemplateResolvers.add(getTemplateResolverPermisos());
 		servletContextTemplateResolvers.add(getTemplateResolverAdministracion());
 		servletContextTemplateResolvers.add(getTemplateResolverMaestros());
+		servletContextTemplateResolvers.add(getTemplateResolverAlumnos());
+		servletContextTemplateResolvers.add(getTemplateResolverGrados());
 
 		templateEngine.setTemplateResolvers(servletContextTemplateResolvers);
 //		templateEngine.setTemplateResolver(getTemplateResolver());

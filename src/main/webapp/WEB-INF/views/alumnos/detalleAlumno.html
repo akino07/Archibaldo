@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorator="templates/layout">
+<body>
+<div th:fragment="modal">
+
+    <div id="detalleAlumnoModal" class="modal">
+
+        <div class="modal-content">
+            <div class="container">
+            <div class="input-field col s3">
+                <select class="browser-default">
+                    <option value="" disabled selected>Semana</option>
+                    <option value="1">Mes</option>
+                    <option value="2">A&#241o</option>
+                </select>
+            </div>
+
+            <div class="input-field col s3">
+                <a class="waves-effect waves-light btn">Filtrar</a>
+            </div>
+
+
+        <table class="striped">
+            <thead>
+            <tr>
+                <th data-field="asistencia">Asistencia</th>
+                <th data-field="inasistencia">Inasistencia</th>
+                <th data-field="permiso">Permiso</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+            </tbody>
+        </table>
+           </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+
+</div>
+
+<script layout:fragment="scripts">
+</script>
+</body>
+</html>
