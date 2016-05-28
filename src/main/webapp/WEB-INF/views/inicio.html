@@ -6,61 +6,64 @@
 
 
 <div layout:fragment="content" style="margin-top: 1%">
-    <div class="container">
 
-        <div class="row">
-            <aside class="col s4">
-                <form class="col s12">
-                    <div class="row">
+    <div class="row">
+        <aside class="col s4" style="float: left; margin-left: 0%; margin-right: 1%">
+            <form class="col s12">
+                <div class="row">
 
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">trending_up</i>
-                            <input id="icon_prefix" type="text" class="validate">
-                            <label for="icon_prefix">Ingreso total</label>
-                        </div>
-
-                        <ul class="collapsible col s12" data-collapsible="accordion">
-                            <li>
-                                <div class="collapsible-header"><i class="material-icons prefix">trending_up</i>Ingreso por Grados</div>
-                                <div class="collapsible-body">
-                                    <input id="icon_prefix1" type="text" class="validate">
-                                    <label for="icon_prefix1">Ingreso 1° grado</label>
-                                    <input id="icon_prefix2" type="text" class="validate">
-                                    <label for="icon_prefix2">Ingreso 2° grado</label>
-                                    <input id="icon_prefix3" type="text" class="validate">
-                                    <label for="icon_prefix3">Ingreso 3° grado</label>
-                                    <input id="icon_prefix4" type="text" class="validate">
-                                    <label for="icon_prefix4">Ingreso 4° grado</label>
-                                    <input id="icon_prefix5" type="text" class="validate">
-                                    <label for="icon_prefix5">Ingreso 5° grado</label>
-                                    <input id="icon_prefix6" type="text" class="validate">
-                                    <label for="icon_prefix6">Ingreso 6° grado</label>
-                                    <input id="icon_prefix7" type="text" class="validate">
-                                    <label for="icon_prefix7">Ingreso 7° grado</label>
-                                    <input id="icon_prefix8" type="text" class="validate">
-                                    <label for="icon_prefix8">Ingreso 8° grado</label>
-                                    <input id="icon_prefix9" type="text" class="validate">
-                                    <label for="icon_prefix9">Ingreso 9° grado</label>
-                                    <input id="icon_prefix10" type="text" class="validate">
-                                    <label for="icon_prefix10">Ingreso 1° Año</label>
-                                    <input id="icon_prefix11" type="text" class="validate">
-                                    <label for="icon_prefix11">Ingreso 2° Año</label>
-                                    <input id="icon_prefix12" type="text" class="validate">
-                                    <label for="icon_prefix12">Ingreso 3° Año</label>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <div class="date-field col s12">
-                            <i class="material-icons prefix">date_range</i>
-                            <label for="date">Calendario</label>
-                            <input id="date" type="date" class="datepicker">
-                        </div>
-
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">trending_up</i>
+                        <input id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">Ingreso total</label>
                     </div>
-                </form>
-            </aside>
-            <div class="col s8">
+
+                    <ul class="collapsible col s12" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons prefix">trending_up</i>Ingreso por Grados</div>
+                            <div class="collapsible-body">
+                                <input id="icon_prefix1" type="text" class="validate">
+                                <label for="icon_prefix1">Ingreso 1° grado</label>
+                                <input id="icon_prefix2" type="text" class="validate">
+                                <label for="icon_prefix2">Ingreso 2° grado</label>
+                                <input id="icon_prefix3" type="text" class="validate">
+                                <label for="icon_prefix3">Ingreso 3° grado</label>
+                                <input id="icon_prefix4" type="text" class="validate">
+                                <label for="icon_prefix4">Ingreso 4° grado</label>
+                                <input id="icon_prefix5" type="text" class="validate">
+                                <label for="icon_prefix5">Ingreso 5° grado</label>
+                                <input id="icon_prefix6" type="text" class="validate">
+                                <label for="icon_prefix6">Ingreso 6° grado</label>
+                                <input id="icon_prefix7" type="text" class="validate">
+                                <label for="icon_prefix7">Ingreso 7° grado</label>
+                                <input id="icon_prefix8" type="text" class="validate">
+                                <label for="icon_prefix8">Ingreso 8° grado</label>
+                                <input id="icon_prefix9" type="text" class="validate">
+                                <label for="icon_prefix9">Ingreso 9° grado</label>
+                                <input id="icon_prefix10" type="text" class="validate">
+                                <label for="icon_prefix10">Ingreso 1° Año</label>
+                                <input id="icon_prefix11" type="text" class="validate">
+                                <label for="icon_prefix11">Ingreso 2° Año</label>
+                                <input id="icon_prefix12" type="text" class="validate">
+                                <label for="icon_prefix12">Ingreso 3° Año</label>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="date-field col s12">
+                        <i class="material-icons prefix">date_range</i>
+                        <label for="date">Calendario</label>
+                        <input id="date" type="date" class="datepicker">
+                    </div>
+
+                </div>
+            </form>
+        </aside>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col s8" style="float: right; margin-left: 0%; margin-right: 1%">
                 <table class="centered highlight responsive-table">
                     <thead class="indigo-text text-lighten-3" >
                     <tr>
@@ -106,5 +109,18 @@
 
     </div>
 </div>
+</div>
+<script layout:fragment="scripts">
+    $('.datepicker').pickadate({
+        selectMonths: true,
+        selectYears: 15
+    });
+
+    $(document).ready(function(){
+        $('.collapsible').collapsible({
+            accordion : false
+        });
+    });
+</script>
 </body>
 </html>
