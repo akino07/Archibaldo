@@ -13,12 +13,12 @@
     <nav role="navigation" class="indigo lighten-1">
         <div class="col s12">
         <div class="nav-wrapper container indigo lighten-1">
-            <a href="#"><i class="material-icons left">school</i>Liceo Manuel Farfan Castro</a>
+            <a href="/"><i class="material-icons left">school</i>Liceo Manuel Farfan Castro</a>
             <ul class="right hide-on-med-and-down">
                 <li id="alumnos-tab"><a href="">Alumnos</a></li>
-                <li id="mensajes-tab"><a href="">Mensajes</a></li>
-                <li id="estadisticas-tab"><a href="">Estadisticas</a></li>
-                <li id="administracion-tab" ><a href="">Administracion</a></li>
+                <li id="mensajes-tab"><a href="/mensajes">Mensajes</a></li>
+                <li id="estadisticas-tab"><a href="/estadisticas">Estadisticas</a></li>
+                <li id="administracion-tab" ><a href="/administracion">Administracion</a></li>
                 <li id="salir-tab"><a href="">Salir</a></li>
             </ul>
         </div>
@@ -42,25 +42,11 @@
 </footer>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 <script th:src="@{/js/materialize.js}"></script>
+<script th:src="@{/js/jquery.highchartTable-min.js}"></script>
 
 <script layout:fragment="scripts">
-
-</script>
-
-
-<script>
-    $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
-    });
-
-    $(document).ready(function(){
-        $('.collapsible').collapsible({
-            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-        });
-    });
-
 
 </script>
 </body>
