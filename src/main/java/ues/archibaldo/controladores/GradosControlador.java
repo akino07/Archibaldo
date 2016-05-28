@@ -9,10 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class GradosControlador {
+
     @RequestMapping(value = "/grados")
-    public String index(){
+    public String grado(){
         return "grados";
     }
 
+    @RequestMapping(value = "/diaGrado")
+    public String diaGrado(){return "diaGrado";
+    }
 
 }
